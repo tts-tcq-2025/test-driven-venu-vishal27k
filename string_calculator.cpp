@@ -4,17 +4,18 @@
 #include <ctype.h>
 #include "string_calculator.h"
 
-// Helper: parse a single number and update AddResult
+
+
+// Helper: add a number to the result
 static void process_number(int num, AddResult* result) {
     result->sum += num;
-    if (num < 0 && result->negative_count < MAX_NEGATIVES) {
-        result->negatives[result->negative_count++] = num;
-    }
 }
 
 AddResult add(const char* input) {
-    AddResult result = {0};  // sum=0, negative_count=0
-    if (input == NULL || *input == '\0') return result;
+    AddResult result = {0};  // sum = 0
+
+    // If the input is empty, return sum = 0
+    if (*input == '\0') return result;
 
     char* copy = strdup(input);  // duplicate string for tokenization
     char* token = strtok(copy, ",");
