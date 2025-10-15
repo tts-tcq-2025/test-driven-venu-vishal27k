@@ -14,8 +14,23 @@ AddResult add(const char* input) {
         return result;  // sum = 0, negatives empty
     }
 
-    // TODO: Parse numbers from input and populate sum & negatives
-    // Example logic could be splitting by ',' and converting with atoi
+   while (*input && isspace(*input)) input++;
+
+    // Check if there is a comma
+    const char* comma = strchr(input, ',');
+    if (comma == NULL) {
+        // Single number case
+        int num = atoi(input);
+        result.sum = num;
+
+        if (num < 0) {
+            result.negatives[0] = num;
+          
+        }
+
+        return result;
+    }
+
 
     return result;
 }
