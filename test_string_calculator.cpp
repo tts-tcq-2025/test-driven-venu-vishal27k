@@ -8,12 +8,11 @@ TEST(AddFunctionTests, EmptyString) {
 
 }
 
-// TEST(AddFunctionTests, SingleNumber) {
-//     const char* input = "5";
-//     AddResult result = add(input);
-//     EXPECT_EQ(result.sum, 5);
-//     EXPECT_EQ(result.negative_count, 0);
-// }
+TEST(AddFunctionTests, SingleNumber) {
+    const char* input = "5";
+    AddResult result = add(input);
+    EXPECT_EQ(result.sum, 5);
+}
 
 // TEST(AddFunctionTests, MultipleNumbers) {
 //     const char* input = "5,10,15";
